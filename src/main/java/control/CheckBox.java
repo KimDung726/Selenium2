@@ -3,6 +3,7 @@ package control;
 import org.openqa.selenium.By;
 
 public class CheckBox extends BaseControl {
+
     public CheckBox(By locator) {
         super(locator);
     }

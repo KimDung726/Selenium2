@@ -1,6 +1,9 @@
 package control;
 
 import org.openqa.selenium.By;
+import utility.Log;
+
+import java.util.Arrays;
 
 public class TextBox extends BaseControl {
 
@@ -30,15 +33,19 @@ public class TextBox extends BaseControl {
 
     public void enter(CharSequence... value) {
         try {
+            Log.debug(String.format("Enter '%s' for %s", Arrays.toString(value), getLocator().toString()));
             getElement().sendKeys(value);
         } catch (Exception e) {
+            Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage().split("\n")[0]));
         }
     }
 
     public void clear() {
         try {
+            Log.debug(String.format("Clean text for %s", getLocator().toString()));
             getElement().clear();
         } catch (Exception e) {
+            Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage().split("\n")[0]));
         }
     }
 

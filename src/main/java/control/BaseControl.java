@@ -9,8 +9,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.StaleElementReferenceException;
+import utility.Log;
 
 public class BaseControl {
+
     private By byLocator;
     private String locator;
     private String dynamicLocator;
@@ -102,6 +104,8 @@ public class BaseControl {
             }
             return element;
         } catch (StaleElementReferenceException e) {
+            Log.error(
+                    String.format("StaleElementReferenceException '%s': %s", getLocator().toString(), e.getMessage().split("\n")[0]));
             return getElement();
         }
     }
@@ -112,8 +116,10 @@ public class BaseControl {
 
     public String getText() {
         try {
+            Log.debug(String.format("Get text of element %s", getLocator().toString()));
             return getElement().getText();
         } catch (Exception e) {
+            Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage().split("\n")[0]));
             throw e;
         }
     }
@@ -133,15 +139,23 @@ public class BaseControl {
         getElement().click();
     }
 
+    public void scrollToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
     public void waitForDisplay() {
         waitForDisplay(DriverUtils.getTimeOut());
     }
 
     public void waitForDisplay(int timeOutInSeconds) {
         try {
+            Log.info(String.format("Wait for control display %s", getLocator().toString()));
             WebDriverWait wait = new WebDriverWait(getDriver(), timeOutInSeconds);
             wait.until(ExpectedConditions.presenceOfElementLocated(getLocator()));
         } catch (Exception e) {
+            Log.error(String.format("WaitForDisplay: Has error with control '%s': %s", getLocator().toString(),
+                    e.getMessage().split("\n")[0]));
         }
     }
 
@@ -150,11 +164,30 @@ public class BaseControl {
         wait.until(ExpectedConditions.alertIsPresent());
     }
 
+    public void waitToBeClickable() {
+        waitToBeClickable(DriverUtils.getTimeOut());
+    }
+
+    public void waitToBeClickable(int timeOutInSeconds) {
+        try {
+            Log.info(String.format("Wait for control to be click able %s", getLocator().toString()));
+            WebDriverWait wait = new WebDriverWait(getDriver(), timeOutInSeconds);
+            wait.until(ExpectedConditions.elementToBeClickable(getLocator()));
+        } catch (Exception e) {
+            Log.error(String.format("waitToBeClickable: Has error with control '%s': %s", getLocator().toString(),
+                    e.getMessage().split("\n")[0]));
+        }
+
+    }
+
     public void waitForVisibility(int timeOutInSeconds) {
         try {
+            Log.info(String.format("Wait for control's visibility %s", getLocator().toString()));
             WebDriverWait wait = new WebDriverWait(getDriver(), timeOutInSeconds);
             wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator()));
         } catch (Exception e) {
+            Log.error(String.format("waitForVisibility: Has error with control '%s': %s", getLocator().toString(),
+                    e.getMessage().split("\n")[0]));
         }
     }
 
@@ -173,8 +206,11 @@ public class BaseControl {
 
     public boolean isSelected() {
         try {
+            Log.debug(String.format("Is control selected or not: %s", getLocator().toString()));
             return getElement().isSelected();
         } catch (Exception e) {
+            Log.error(String.format("IsSelected: Has error with control '%s': %s", getLocator().toString(),
+                    e.getMessage().split("\n")[0]));
             return false;
         }
     }
@@ -185,9 +221,12 @@ public class BaseControl {
 
     public void waitForInVisibility(int timeOutInSeconds) {
         try {
+            Log.info(String.format("Wait for control's invisibility %s", getLocator().toString()));
             WebDriverWait wait = new WebDriverWait(getDriver(), timeOutInSeconds);
             wait.until(ExpectedConditions.invisibilityOfElementLocated(getLocator()));
         } catch (Exception e) {
+            Log.error(String.format("waitForInVisibility: Has error with control '%s': %s", getLocator().toString(),
+                    e.getMessage().split("\n")[0]));
         }
     }
 
@@ -198,15 +237,6 @@ public class BaseControl {
         } catch (Exception e) {
             return false;
         }
-    }
-
-    public String waitTextRepoChange() {
-        try {
-            Thread.sleep(1000);
-        } catch (Exception e) {
-
-        }
-        return "";
     }
 
 }

@@ -3,6 +3,7 @@ package control;
 import org.openqa.selenium.By;
 
 public class Link extends BaseControl {
+
     public Link(String locator) {
         super(locator);
     }

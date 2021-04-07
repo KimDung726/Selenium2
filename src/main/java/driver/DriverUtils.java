@@ -41,7 +41,7 @@ public class DriverUtils extends DriverFactory {
         return getDriver().getTitle();
     }
 
-    public static void acceptAltert() {
+    public static void acceptAlert() {
         waitForAlert(Constants.SHORT_TIME);
         switchToAlert().accept();
     }

@@ -7,20 +7,23 @@ import org.testng.Assert;
 import testcase.BaseTest;
 import org.testng.annotations.Test;
 
+import static utility.Log.*;
+
 public class RW_LOGIN_TC001 extends BaseTest {
     LoginPage loginPage = new LoginPage();
     HomePage homePage = new HomePage();
 
-    @Test(description = "Check User can login successfully with valid data for all fields")
+    @Test(priority = 0, description = "Check User can login successfully with valid data for all fields")
     public void TC001() {
 
-        Log.info("Step #1: Navigate to Railway Page");
+        startTestCase("TC_RAILWAY_LOGIN_001");
 
-        Log.info("Step #2: Select LoginTab");
+        info("Step #1: Navigate to Railway Page and select LoginTab");
+        homePage.selectOnTab(Constants.LOGIN_TAB);
 
-        Log.info("Step #3: Login with valid username and password");
+        info("Step #2: Login with valid username and password");
         loginPage.login(Constants.USERNAME, Constants.PASSWORD);
 
-        Log.info("Step #4: Verify that Dashboard Homepage appears");
+        info("Step #3: Verify that Dashboard Homepage appears");
     }
 }
