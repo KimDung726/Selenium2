@@ -2,7 +2,8 @@ package page;
 
 import control.Link;
 
-public class HomePage {
+public class BasePage {
+
     private final Link tabLink = new Link("css=a[href*='%s']");
 
     public void selectOnTab(String pathTab) {
