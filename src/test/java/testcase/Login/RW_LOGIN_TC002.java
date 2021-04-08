@@ -23,9 +23,10 @@ public class RW_LOGIN_TC002 extends BaseTest {
         info("Step #2: Login with valid username and invalid Password several times");
         loginPage.loginSeveralTimes(Constants.VALID_EMAIL, Constants.INVALID_PASSWORD, Constants.RUNNING_INTERVAL);
 
-        info("Step #3: Verify that Actual Login error message same as Expected Login error message.");
         String actualLoginErrorMsg = loginPage.getLoginError();
         String expectedLoginErrorMsg = Messages.LOGIN_FAILED;
+
+        info("Step #3: Verify that Actual Login error message same as Expected Login error message.");
         Assert.assertEquals(actualLoginErrorMsg, expectedLoginErrorMsg);
     }
 }

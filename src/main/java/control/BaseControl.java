@@ -139,9 +139,9 @@ public class BaseControl {
         getElement().click();
     }
 
-    public void scrollToElement(WebElement element) {
+    public void scrollToElement() {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
+        js.executeScript("arguments[0].scrollIntoView(true);", getElement());
     }
 
     public void waitForDisplay() {

@@ -11,5 +11,5 @@ public class Messages {
     public static final String MISSING_DATA_IN_LOGIN_FORM = "There was a problem with your login and/or errors exist in your form.";
     public static final String LOGIN_FAILED = "Invalid username or password. Please try again.";
     public static final String LOGIN_ATTEMPTS_WARNING = "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.";
-    public static final String REGISTER_SUCCESSFULLY = "Thank you for registering your account";
+    public static final String REGISTER_SUCCESSFULLY = "Registration Confirmed! You can now log in to the site.";
 }

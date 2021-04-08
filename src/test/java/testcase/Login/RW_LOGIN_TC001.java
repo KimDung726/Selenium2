@@ -23,9 +23,10 @@ public class RW_LOGIN_TC001 extends BaseTest {
         info("Step #2: Login with valid username and password");
         loginPage.login(Constants.VALID_EMAIL, Constants.VALID_PASSWORD);
 
-        info("Step #3: Verify that Actual WelcomeUser message same as Expected WelcomeUser message.");
         String actualWelcomeUserMsg = loginPage.getWelcomeMessage();
         String expectedWelcomeUserMsg = Constants.WELCOME_USER;
+
+        info("Step #3: Verify that Actual WelcomeUser message same as Expected WelcomeUser message.");
         Assert.assertEquals(actualWelcomeUserMsg, expectedWelcomeUserMsg);
     }
 }

@@ -29,9 +29,10 @@ public class RW_REGISTER_TC001 extends BaseTest {
         info("Step #3: Register a new account");
         registerPage.registerAccount(username, password, password, PID);
 
-        info("Step #4: Verify that Actual Registration Confirmed message same as Expected Registration Confirmed message");
         String actualRegistrationConfirmedMsg = registerPage.getRegistrationConfirmedText();
         String expectedRegistrationConfirmedMsg = Messages.REGISTER_SUCCESSFULLY;
+
+        info("Step #4: Verify that Actual Registration Confirmed message same as Expected Registration Confirmed message");
         Assert.assertEquals(actualRegistrationConfirmedMsg, expectedRegistrationConfirmedMsg);
     }
 

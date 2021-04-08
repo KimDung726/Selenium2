@@ -23,9 +23,10 @@ public class RW_LOGIN_TC003 extends BaseTest {
         info("Step #2: Login with blank Email and valid Password");
         loginPage.login("", Constants.VALID_PASSWORD);
 
-        info("Step #3: Verify that Actual Login error message same as Expected Login error message.");
         String actualLoginErrorMsg = loginPage.getLoginError();
         String expectedLoginErrorMsg = Messages.MISSING_DATA_IN_LOGIN_FORM;
+
+        info("Step #3: Verify that Actual Login error message same as Expected Login error message.");
         Assert.assertEquals(actualLoginErrorMsg, expectedLoginErrorMsg);
     }
 }

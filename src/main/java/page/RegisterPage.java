@@ -23,6 +23,7 @@ public class RegisterPage extends BasePage {
     }
 
     public void clickOnRegisterBtn() {
+        registerBtn.scrollToElement();
         registerBtn.waitToBeClickable();
         registerBtn.click();
     }
