@@ -1,6 +1,7 @@
 package page;
 
 import control.*;
+import io.qameta.allure.Step;
 import utility.Constants;
 
 public class RegisterPage extends BasePage {
@@ -9,11 +10,11 @@ public class RegisterPage extends BasePage {
     TextBox emailTxt = new TextBox("id=email");
     TextBox passwordTxt = new TextBox("id=password");
     TextBox confirmPasswordTxt = new TextBox("id=confirmPassword");
-    Link registrationConfirmedLabel = new Link("css=div#content>p");
-    Link PIDErrorLabel = new Link("css=label.validation-error[for='pid']");
-    Link passwordErrorLabel = new Link("css=label.validation-error[for='password']");
+    Link registerErrorLabel = new Link("css=p.message.error");
+    Link registerTitleLabel = new Link("css=#content h1");
     Button registerBtn = new Button("css=input[value='Register'][type='submit']");
 
+    @Step("Register account with data: Email [{0}], Password [{1}], ConfirmPassword [{2}], PID [{3}]")
     public void registerAccount(String strEmail, String strPassword, String strConfirmPassword, String strPID) {
         emailTxt.enter(strEmail);
         passwordTxt.enter(strPassword);
@@ -28,12 +29,20 @@ public class RegisterPage extends BasePage {
         registerBtn.click();
     }
 
+    @Step("Click on the Register tab")
     public void selectOnRegisterTab() {
         selectOnTab(Constants.REGISTER_TAB);
     }
 
-    public String getRegistrationConfirmedText() {
-        registrationConfirmedLabel.waitForDisplay();
-        return registrationConfirmedLabel.getText();
+    @Step("VP: Title of Register page displayed")
+    public String getTitleRegisterPage() {
+        registerTitleLabel.waitForDisplay();
+        return registerTitleLabel.getText();
+    }
+
+    @Step("VP: Error message displayed")
+    public String getRegisterErrorLabel() {
+        registerErrorLabel.waitForDisplay();
+        return registerErrorLabel.getText();
     }
 }

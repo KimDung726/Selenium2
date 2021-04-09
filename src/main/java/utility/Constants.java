@@ -22,13 +22,14 @@ public class Constants {
 
     public static final String DAY_FORMAT = "M/d/yyyy";
 
+    public static final String TITLE_REGISTER_PAGE = "Create account";
+    public static final String TITLE_LOGIN_PAGE = "Login page";
+
     public static final String LOGIN_TAB = "Login";
-    public static final String LOGOUT_TAB = "Logout";
-    public static final String CONTACT_TAB = "Contact";
     public static final String REGISTER_TAB = "Register";
     public static final String MY_TICKET_TAB = "ManageTicket";
     public static final String BOOK_TICKET_TAB = "BookTicket";
-    public static final String TIME_TABLE_TAB = "TrainTimeList";
-    public static final String TICKET_PRICE_TAB = "TrainPriceList";
-    public static final String CHANGE_PASSWORD_TAB = "ChangePassword";
+
+    public static final String GENERATE_ALLURE_REPORT = "allure generate --clean";
+
 }

@@ -1,5 +1,6 @@
 package testcase.Login;
 
+import page.RegisterPage;
 import utility.*;
 import page.LoginPage;
 import testcase.BaseTest;
@@ -11,22 +12,22 @@ import static utility.Log.*;
 public class RW_LOGIN_TC002 extends BaseTest {
 
     LoginPage loginPage = new LoginPage();
+    RegisterPage registerPage = new RegisterPage();
 
-    @Test(priority = 0, description = "System shows message when user enters wrong password several times.")
+    @Test(priority = 0, description = "Verify that clicking on the hyperlink text \"registration page\" will redirect to the Register page")
     public void TC002() {
 
         startTestCase("RAILWAY_LOGIN_TC002");
 
-        info("Step #1: Navigate to Railway Page and select LoginTab");
+        info("Step #1 + #2: Navigate to Railway Page and Click on the Login tab");
         loginPage.selectOnLoginTab();
 
-        info("Step #2: Login with valid username and invalid Password several times");
-        loginPage.loginSeveralTimes(Constants.VALID_EMAIL, Constants.INVALID_PASSWORD, Constants.RUNNING_INTERVAL);
+        info("Step #3: Click on the hyperlink text \"registration page\"");
 
-        String actualLoginErrorMsg = loginPage.getLoginError();
-        String expectedLoginErrorMsg = Messages.LOGIN_FAILED;
+        String actualLoginErrorMsg = registerPage.getTitleRegisterPage();
+        String expectedLoginErrorMsg = Constants.TITLE_REGISTER_PAGE;
 
-        info("Step #3: Verify that Actual Login error message same as Expected Login error message.");
+        info("Step #4: Verify that User is redirected to the Register page");
         Assert.assertEquals(actualLoginErrorMsg, expectedLoginErrorMsg);
     }
 }

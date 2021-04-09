@@ -1,5 +1,6 @@
 package driver;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import utility.Log;
 
@@ -37,6 +38,7 @@ public abstract class DriverManager {
     /***
      * Navigate to base URL
      */
+    @Step("Navigate to the Home page at: {0}")
     public void navigateToUrl(String url) {
         DriverUtils.maximumBrowser();
         getWebDriver().navigate().to(url);

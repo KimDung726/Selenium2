@@ -1,6 +1,7 @@
 package page;
 
 import control.*;
+import io.qameta.allure.Step;
 import utility.Constants;
 
 public class LoginPage extends BasePage {
@@ -8,8 +9,9 @@ public class LoginPage extends BasePage {
     TextBox passwordTxt = new TextBox("id=password");
     Button loginBtn = new Button("css=.form-actions input");
     Link loginErrorLabel = new Link("css=p.message.error.LoginForm");
-    Link welcomeMessageLink = new Link("css=#banner .account>strong");
+    Link loginTitleLabel = new Link("css=#content h1");
 
+    @Step("Login with account: Email [{0}], Password [{1}]")
     public void login(String strEmail, String strPwd) {
         usernameTxt.enter(strEmail);
         passwordTxt.enter(strPwd);
@@ -21,6 +23,7 @@ public class LoginPage extends BasePage {
         loginBtn.click();
     }
 
+    @Step("Click on the Login tab")
     public void selectOnLoginTab() {
         selectOnTab(Constants.LOGIN_TAB);
     }
@@ -37,8 +40,9 @@ public class LoginPage extends BasePage {
         return loginErrorLabel.getText();
     }
 
-    public String getWelcomeMessage() {
-        welcomeMessageLink.waitForDisplay();
-        return welcomeMessageLink.getText();
+    @Step("VP: Title of Login page displayed")
+    public String getTitleLoginPage() {
+        loginTitleLabel.waitForDisplay();
+        return loginTitleLabel.getText();
     }
 }

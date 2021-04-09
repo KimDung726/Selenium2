@@ -12,21 +12,19 @@ public class RW_LOGIN_TC001 extends BaseTest {
 
     LoginPage loginPage = new LoginPage();
 
-    @Test(priority = 0, description = "Verify that User can login successfully with valid data for all fields")
+    @Test(priority = 0, description = "Verify that user can open the Login page")
     public void TC001() {
 
         startTestCase("RAILWAY_LOGIN_TC001");
 
-        info("Step #1: Navigate to Railway Page and select LoginTab");
+        info("Step #1 + #2: Navigate to Railway Page and Click on the Login tab");
         loginPage.selectOnLoginTab();
 
-        info("Step #2: Login with valid username and password");
-        loginPage.login(Constants.VALID_EMAIL, Constants.VALID_PASSWORD);
+        String actualRegistrationConfirmedMsg = loginPage.getTitleLoginPage();
+        String expectedRegistrationConfirmedMsg = Constants.TITLE_LOGIN_PAGE;
 
-        String actualWelcomeUserMsg = loginPage.getWelcomeMessage();
-        String expectedWelcomeUserMsg = Constants.WELCOME_USER;
+        info("Step #3: Observe the destination page");
+        Assert.assertEquals(actualRegistrationConfirmedMsg, expectedRegistrationConfirmedMsg);
 
-        info("Step #3: Verify that Actual WelcomeUser message same as Expected WelcomeUser message.");
-        Assert.assertEquals(actualWelcomeUserMsg, expectedWelcomeUserMsg);
     }
 }
