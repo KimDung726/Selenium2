@@ -35,7 +35,7 @@ public class RegisterPage extends BasePage {
     }
 
     @Step("VP: Title of Register page displayed")
-    public String getTitleRegisterPage() {
+    public String getRegisterTitlePage() {
         registerTitleLabel.waitForDisplay();
         return registerTitleLabel.getText();
     }

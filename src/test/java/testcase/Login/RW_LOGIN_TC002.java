@@ -14,7 +14,7 @@ public class RW_LOGIN_TC002 extends BaseTest {
     LoginPage loginPage = new LoginPage();
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(priority = 0, description = "Verify that clicking on the hyperlink text \"registration page\" will redirect to the Register page")
+    @Test(priority = 1, description = "Verify that clicking on the hyperlink text \"registration page\" will redirect to the Register page")
     public void TC002() {
 
         startTestCase("RAILWAY_LOGIN_TC002");
@@ -23,11 +23,12 @@ public class RW_LOGIN_TC002 extends BaseTest {
         loginPage.selectOnLoginTab();
 
         info("Step #3: Click on the hyperlink text \"registration page\"");
+        loginPage.clickOnRegistrationPageLink();
 
-        String actualLoginErrorMsg = registerPage.getTitleRegisterPage();
-        String expectedLoginErrorMsg = Constants.TITLE_REGISTER_PAGE;
+        String actualRegisterTitle = registerPage.getRegisterTitlePage();
+        String expectedRegisterTitle = Constants.TITLE_REGISTER_PAGE;
 
         info("Step #4: Verify that User is redirected to the Register page");
-        Assert.assertEquals(actualLoginErrorMsg, expectedLoginErrorMsg);
+        Assert.assertEquals(actualRegisterTitle, expectedRegisterTitle);
     }
 }

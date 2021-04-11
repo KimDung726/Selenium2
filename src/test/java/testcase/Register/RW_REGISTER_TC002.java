@@ -13,7 +13,7 @@ public class RW_REGISTER_TC002 extends BaseTest {
 
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(priority = 0, description = "Verify that user cannot create new account using Email that has been registered")
+    @Test(priority = 1, description = "Verify that user cannot create new account using Email that has been registered")
     public void TC001() {
 
         startTestCase("RAILWAY_REGISTER_TC001");
@@ -28,11 +28,11 @@ public class RW_REGISTER_TC002 extends BaseTest {
         info("Step #3: Input a registered email in the Email field and Input valid data for all other field");
         registerPage.registerAccount(Constants.VALID_EMAIL, password, password, PID);
 
-        String actualRegistrationConfirmedMsg = registerPage.getRegisterErrorLabel();
-        String expectedRegistrationConfirmedMsg = Messages.EMAIL_HAS_BEEN_REGISTERED;
+        String actualRegisterErrorMsg = registerPage.getRegisterErrorLabel();
+        String expectedRegisterErrorMsg = Messages.EMAIL_HAS_BEEN_REGISTERED;
 
         info("Step #4: Verify that User cannot register new account");
-        Assert.assertEquals(actualRegistrationConfirmedMsg, expectedRegistrationConfirmedMsg);
+        Assert.assertEquals(actualRegisterErrorMsg, expectedRegisterErrorMsg);
     }
 
 }

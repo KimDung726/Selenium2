@@ -34,5 +34,10 @@ public class ComboBox extends BaseControl {
         select.selectByVisibleText(text);
     }
 
+    public String getFirstSelectedOption() {
+        Select select = new Select(getElement());
+        return select.getFirstSelectedOption().getText();
+    }
+
 }
 

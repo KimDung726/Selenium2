@@ -6,7 +6,6 @@
         <classes>
             <class name="testcase.Login.RW_LOGIN_TC001" />
             <class name="testcase.Login.RW_LOGIN_TC002" />
-            <class name="testcase.Login.RW_LOGIN_TC003" />
         </classes>
     </test>
 </suite>

@@ -12,6 +12,7 @@ public class Constants {
 
     public static int MAX_PASSWORD_LENGTH = 64;
     public static int MIN_PASSWORD_LENGTH = 8;
+    public static final int NUMBER_OF_DAYS_FROM_THE_CURRENT = 5;
 
     public static int MIN_PID_LENGTH = 8;
     public static int MAX_PID_LENGTH = 20;
