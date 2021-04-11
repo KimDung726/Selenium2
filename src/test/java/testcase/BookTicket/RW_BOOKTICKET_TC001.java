@@ -31,7 +31,7 @@ public class RW_BOOKTICKET_TC001 extends BaseTest {
 
         info("Get information of ticket before book.");
         String bookingDate = getDate(Constants.NUMBER_OF_DAYS_FROM_THE_CURRENT);
-        List<String> ticketInfoBeforeBook = bookTicketPage.getTicketInfoBeforeBook();
+        List<String> ticketInfoBeforeBook = bookTicketPage.getTicketInfoBeforeBook(bookingDate);
 
         info("Step #3:  Book ticket(s) successfully");
         bookTicketPage.bookTicket(bookingDate);
@@ -40,7 +40,7 @@ public class RW_BOOKTICKET_TC001 extends BaseTest {
         List<String> ticketInfoAfterBook = bookTicketPage.getTicketInfoAfterBookSuccessfully();
 
         info("Step #4:  Observe information in the \"Ticket booked successfully!\" page");
-
+        Assert.assertEquals(ticketInfoBeforeBook, ticketInfoAfterBook);
     }
 }
 
