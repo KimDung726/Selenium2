@@ -12,6 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <xmlFile>src/test/resources/testng.xml</xmlFile>
+        <aspectj.version>1.9.6</aspectj.version>
         <suiteXmlFile>${xmlFile}</suiteXmlFile>
     </properties>
 
@@ -111,7 +112,7 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.9.6</version>
+            <version>${aspectj.version}</version>
         </dependency>
     </dependencies>
 </project>

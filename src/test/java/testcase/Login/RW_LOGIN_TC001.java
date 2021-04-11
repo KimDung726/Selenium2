@@ -29,7 +29,7 @@ public class RW_LOGIN_TC001 extends BaseTest {
         loginPage.selectOnLoginTab();
 
         String actualLoginTitle = loginPage.getLoginTitlePage();
-        String expectedLoginTitle = Constants.TITLE_REGISTER_PAGE;
+        String expectedLoginTitle = Constants.TITLE_LOGIN_PAGE;
 
         info("Step #3: Observe the destination page");
         Assert.assertEquals(actualLoginTitle, expectedLoginTitle);
