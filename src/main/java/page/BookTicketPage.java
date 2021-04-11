@@ -28,13 +28,13 @@ public class BookTicketPage extends BasePage {
         selectOnTab(Constants.BOOK_TICKET_TAB);
     }
 
-    @Step("Book Ticket")
+    @Step("Book Ticket: date [{0}]")
     public void bookTicket(String date) {
         clickOnDate(date);
         _btnBookTicket.click();
     }
 
-    @Step("Book Ticket Several Times")
+    @Step("Book Ticket Several Times: date [{1}], times [{0}]")
     public void bookTicketSeveralTimes(int time, String date) {
         for (int i = 0; i <= time; i++) {
             selectOnTab(Constants.BOOK_TICKET_TAB);
@@ -42,11 +42,13 @@ public class BookTicketPage extends BasePage {
         }
     }
 
+    @Step("Select date: {0}")
     public void clickOnDate(String date) {
         _cbbDepartDate.scrollToElement();
         _cbbDepartDate.select(date);
     }
 
+    @Step("Get information of ticket before book")
     public List<String> getTicketInfoBeforeBook(String date) {
         List<String> bookingInfo = new ArrayList<String>();
 
@@ -59,6 +61,7 @@ public class BookTicketPage extends BasePage {
         return bookingInfo;
     }
 
+    @Step("Get information of ticket after book")
     public List<String> getTicketInfoAfterBookSuccessfully() {
         List<String> bookingInfo = new ArrayList<String>();
 
