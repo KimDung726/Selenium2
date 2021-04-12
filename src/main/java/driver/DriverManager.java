@@ -6,19 +6,18 @@ import utility.Log;
 
 public abstract class DriverManager {
 
-    protected WebDriver driver;
-
-    protected abstract void createWebDriver();
+    protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    protected abstract WebDriver createWebDriver();
 
     /***
      * Get Driver
      * @return : driver
      */
     public WebDriver getWebDriver() {
-        if (null == driver) {
-            createWebDriver();
+        if (null == driver.get()) {
+            driver.set(this.createWebDriver());
         }
-        return driver;
+        return driver.get();
     }
 
     /***
@@ -27,8 +26,8 @@ public abstract class DriverManager {
     public void quitDriver() {
         try {
             if (null != driver) {
-                driver.quit();
-                driver = null;
+                driver.get().quit();
+                driver.remove();
             }
         } catch (Exception e) {
             Log.error("Unable to gracefully quit WebDriver: " + e);
@@ -41,7 +40,7 @@ public abstract class DriverManager {
     @Step("Navigate to the Home page at: {0}")
     public void navigateToUrl(String url) {
         DriverUtils.maximumBrowser();
-        getWebDriver().navigate().to(url);
+        driver.get().navigate().to(url);
     }
 
 }

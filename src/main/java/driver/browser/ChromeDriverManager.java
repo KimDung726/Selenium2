@@ -1,16 +1,29 @@
 package driver.browser;
 
+import driver.DriverManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import io.github.bonigarcia.wdm.*;
 
-public class ChromeDriverManager extends driver.DriverManager {
+import static io.github.bonigarcia.wdm.config.DriverManagerType.CHROME;
+
+public class ChromeDriverManager extends DriverManager {
 
     @Override
-    public void createWebDriver() {
-        WebDriverManager.chromedriver().setup();
+    public WebDriver createWebDriver() {
+        WebDriverManager.getInstance(CHROME).setup();
+        return new ChromeDriver(getChromeOptions());
+    }
+
+    private ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
-        this.driver = new ChromeDriver(options);
+        options.addArguments("--disable-notifications");
+        options.addArguments("--start-maximized");
+        options.addArguments("--disable-features=EnableEphemeralFlashPermission");
+        options.addArguments("--disable-infobars");
+
+        return options;
     }
 
 }

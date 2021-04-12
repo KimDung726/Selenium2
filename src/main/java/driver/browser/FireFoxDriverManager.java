@@ -1,15 +1,29 @@
 package driver.browser;
 
-import org.openqa.selenium.firefox.*;
+import driver.DriverManager;
 import io.github.bonigarcia.wdm.*;
+import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class FireFoxDriverManager extends driver.DriverManager {
+import static io.github.bonigarcia.wdm.config.DriverManagerType.FIREFOX;
+
+public class FireFoxDriverManager extends DriverManager {
 
     @Override
-    public void createWebDriver() {
-        WebDriverManager.firefoxdriver().setup();
+    public WebDriver createWebDriver() {
+        WebDriverManager.getInstance(FIREFOX).setup();
+        return new FirefoxDriver(getFirefoxOptions());
+    }
+
+    private FirefoxOptions getFirefoxOptions() {
         FirefoxOptions options = new FirefoxOptions();
-        this.driver = new FirefoxDriver(options);
+        options.addArguments("--disable-notifications");
+        options.addArguments("--start-maximized");
+        options.addArguments("--disable-features=EnableEphemeralFlashPermission");
+        options.addArguments("--disable-infobars");
+
+        return options;
     }
 
 }
