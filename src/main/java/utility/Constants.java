@@ -5,17 +5,13 @@ public class Constants {
 
     public static final String VALID_EMAIL = "dudang@squaretrade.com";
     public static final String VALID_PASSWORD = "12345678";
-    public static final String WELCOME_USER = "Welcome " + VALID_EMAIL;
 
-    public static final String INVALID_PASSWORD = "wrong password";
-    public static final String INVALID_USERNAME = "wrong username";
-
-    public static int MAX_PASSWORD_LENGTH = 64;
-    public static int MIN_PASSWORD_LENGTH = 8;
+    public static final int MAX_PASSWORD_LENGTH = 64;
+    public static final int MIN_PASSWORD_LENGTH = 8;
     public static final int NUMBER_OF_DAYS_FROM_THE_CURRENT = 5;
 
-    public static int MIN_PID_LENGTH = 8;
-    public static int MAX_PID_LENGTH = 20;
+    public static final int MIN_PID_LENGTH = 8;
+    public static final int MAX_PID_LENGTH = 20;
 
     public static final int RUNNING_INTERVAL = 2;
     public static final int SHORT_TIME = 10;

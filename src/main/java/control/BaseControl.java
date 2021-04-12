@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.StaleElementReferenceException;
 import utility.Log;
 
+import java.util.List;
+
 public class BaseControl {
 
     private By byLocator;
@@ -93,6 +95,10 @@ public class BaseControl {
         }
     }
 
+    public List<WebElement> totalElements() {
+        return getDriver().findElements(getLocator());
+    }
+
     public WebElement getElement() {
         WebElement element = null;
         try {
@@ -157,11 +163,6 @@ public class BaseControl {
             Log.error(String.format("WaitForDisplay: Has error with control '%s': %s", getLocator().toString(),
                     e.getMessage().split("\n")[0]));
         }
-    }
-
-    public void waitForAlert(int timeOutInSeconds) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), timeOutInSeconds);
-        wait.until(ExpectedConditions.alertIsPresent());
     }
 
     public void waitToBeClickable() {

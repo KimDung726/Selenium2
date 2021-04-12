@@ -61,6 +61,11 @@ public class BookTicketPage extends BasePage {
         return bookingInfo;
     }
 
+    @Step("Get amount of ticket after book")
+    public int getAmountTickets(){
+        return Integer.parseInt(amountInfoAfterBook.getText());
+    }
+
     @Step("Get information of ticket after book")
     public List<String> getTicketInfoAfterBookSuccessfully() {
         List<String> bookingInfo = new ArrayList<String>();
