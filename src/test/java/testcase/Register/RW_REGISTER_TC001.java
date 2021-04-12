@@ -15,7 +15,7 @@ import static utility.Log.*;
 
 @Listeners({ TestListener.class })
 @Epic("Regression Tests")
-@Feature("Register tests")
+@Feature("Register")
 public class RW_REGISTER_TC001 extends BaseTest {
 
     RegisterPage registerPage = new RegisterPage();

@@ -1,10 +1,14 @@
 package testcase.BookTicket;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import page.BookTicketPage;
 import page.LoginPage;
 import testcase.BaseTest;
+import testcase.TestListener;
 import utility.Constants;
 
 import java.util.List;
@@ -13,7 +17,11 @@ import static utility.Log.info;
 import static utility.Log.startTestCase;
 import static utility.helper.DataHelper.*;
 
+@Listeners({ TestListener.class })
+@Epic("Regression Tests")
+@Feature("BookTicket")
 public class RW_BOOKTICKET_TC001 extends BaseTest {
+
     LoginPage loginPage = new LoginPage();
     BookTicketPage bookTicketPage = new BookTicketPage();
 

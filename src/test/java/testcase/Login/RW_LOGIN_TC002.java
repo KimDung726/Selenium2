@@ -16,7 +16,7 @@ import static utility.Log.*;
 
 @Listeners({ TestListener.class })
 @Epic("Regression Tests")
-@Feature("Login tests")
+@Feature("Login")
 public class RW_LOGIN_TC002 extends BaseTest {
 
     LoginPage loginPage = new LoginPage();
