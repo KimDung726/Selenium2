@@ -86,27 +86,29 @@ running follow these simple example steps.
 
 ### Set up environment
 
-🔵 Install Java 8 or above
+- Install Java 8 or above
 
-🔵 Install Maven
+- Install Maven
 
-🔵 Install dependencies
-
-#### 1. Install Java 8 or above
-
-#### 2. Install Maven
-
-#### 3. Install dependencies
+- Install dependencies
+1. CD to the project folder
+2. Open CMD/terminal then type `./mvnw install`
 
 
 <!-- USAGE -->
 
 ## Usage
 
-🖥 Clone the repo : 
+🖥 Copy the repo into your local machine : 
 
    ```sh
    git clone https://github.com/KimDung726/Selenium2
+   ```
+
+1. Type to run test
+
+   ```sh
+   ./mvnw clean test
    ```
 
 📊 The test result locates in the test-output folder
