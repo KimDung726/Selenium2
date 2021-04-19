@@ -80,7 +80,9 @@ running follow these simple example steps.
 ### Set up environment
 
 🔵 Install Java 8 or above
+
 🔵 Install Maven
+
 🔵 Install dependencies
 
 #### 1. Install Java 8 or above
@@ -112,7 +114,9 @@ running follow these simple example steps.
 ## Helpful Docs
 
 📑 [Xpath Cheatsheet](https://devhints.io/xpath)
+
 📑 [Selenium: Locating Elements](https://selenium-python.readthedocs.io/locating-elements.html)
+
 📑 [Selenium: Waits](https://selenium-python.readthedocs.io/waits.html)
 
 [contributors-shield]: https://img.shields.io/github/contributors/KimDung726/Selenium2.svg?style=for-the-badge
