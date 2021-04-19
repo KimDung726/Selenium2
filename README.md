@@ -46,9 +46,10 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#Issues">Common issues</a></li>
+    <li><a href="#helpful-docs">Helpful Docs</a></li>
   </ol>
 </details>
+
 
 <!-- ABOUT THE PROJECT -->
 
@@ -57,6 +58,7 @@
 [![Website need testing][product-screenshot]](http://www.railway.somee.com/Page/HomePage.cshtml)
 
 🌏 A Maven framework in which to build Selenium tests written in Java with Allure reports of test results.
+
 
 ### Built With
 
@@ -67,6 +69,7 @@
 * [Maven](https://maven.apache.org/) - Dependency management
 * [WebDriverManager](https://github.com/bonigarcia/webdrivermanager) - Local driver binary management
 
+
 <!-- GETTING STARTED -->
 
 ## Getting Started
@@ -74,10 +77,12 @@
 📖 This is an example of how you may give instructions on setting up your project locally. To get a local copy up and
 running follow these simple example steps.
 
+
 ### Prerequisites
 
 * [OS](https://www.microsoft.com/en-us/software-download/windows10) : Windows, recommended Windows 10
 * [Browsers](https://www.jetbrains.com/idea/download/#section=windows) : Chrome latest or older, Firefox 46.0.1 or older
+
 
 ### Set up environment
 
@@ -93,7 +98,8 @@ running follow these simple example steps.
 
 #### 3. Install dependencies
 
-<!-- USAGE EXAMPLES -->
+
+<!-- USAGE -->
 
 ## Usage
 
@@ -105,13 +111,15 @@ running follow these simple example steps.
 
 📊 The test result locates in the test-output folder
 
+
 <!-- CONTACT -->
 
 ## Contact
 
 📱 Created by [Dang Thi Kim Dung](kimdung726@gmail.com) - feel free to contact me!
 
-<!-- ISSUES -->
+
+<!-- HELPFUL DOCS -->
 
 ## Helpful Docs
 
