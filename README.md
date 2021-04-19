@@ -15,14 +15,15 @@
   <p align="center">
     This is an example of using Selenium test framework.
     <br />
-    <a href="https://github.com/KimDung726/Selenium2">View Demo</a>
+    <a href="https://github.com/KimDung726/Selenium2">🖼 View Demo</a>
     ·
-    <a href="https://github.com/KimDung726/Selenium2">Report Bug</a>
+    <a href="https://github.com/KimDung726/Selenium2">📊 Report Bug</a>
     ·
-    <a href="https://github.com/KimDung726/Selenium2">Request Feature</a>
+    <a href="https://github.com/KimDung726/Selenium2">🛂 Request Feature</a>
   </p>
 
 <!-- TABLE OF CONTENTS -->
+<details open="open">
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -47,6 +48,7 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#Issues">Common issues</a></li>
   </ol>
+</details>
 
 <!-- ABOUT THE PROJECT -->
 
