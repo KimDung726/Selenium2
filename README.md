@@ -108,9 +108,15 @@ running follow these simple example steps.
 1. Type to run test
 
    ```sh
-   ./mvnw clean test
+   mvnw clean test
    ```
+   
+2. Generate report
 
+   ```sh
+   allure serve allure-results
+   ```
+   
 📊 The test result locates in the test-output folder
 
 

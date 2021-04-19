@@ -12,13 +12,14 @@ import java.util.regex.Pattern;
 public class MyTicketPage extends BasePage {
     Link totalNewTicketInNote = new Link("//div[@class='message']//li[contains(.,'currently book')]");
     Link totalTicketInTable = new Link("//tr[@class='TableSmallHeader']/..//following-sibling::tr/td[position()=9]");
+    Link infoBookingNewlyTicket = new Link("css=.MyTable .TableSmallHeader + tr");
 
     @Step("Click on the MyTicket tab")
     public void selectOnMyTicketTab() {
         selectOnTab(Constants.MY_TICKET_TAB);
     }
 
-    @Step("Get total New Ticket in Note")
+    @Step("VP: Get total New Ticket in Note")
     public int getTotalNewTicketInNote() {
         String amountTickets = "";
 
@@ -32,7 +33,7 @@ public class MyTicketPage extends BasePage {
         return Integer.parseInt(amountTickets);
     }
 
-    @Step("Get total Ticket in Table")
+    @Step("VP: Get total Ticket in Table")
     public int getTotalTicketInTable() {
         int amountTickets = 0;
         List<WebElement> totalTickets = totalTicketInTable.totalElements();
@@ -43,5 +44,13 @@ public class MyTicketPage extends BasePage {
         return amountTickets;
     }
 
+    @Step("VP: Get information of Newly ticket in table after book.")
+    public String getInfoBookingNewlyTicket(){
+        String infoTicket = infoBookingNewlyTicket.getText();
+        infoTicket = infoTicket.substring(2, infoTicket.length());
+        infoTicket = infoTicket.replace(" New","");
+
+        return infoTicket;
+    }
 
 }

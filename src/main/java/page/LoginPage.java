@@ -11,7 +11,7 @@ public class LoginPage extends BasePage {
     Link loginTitleLabel = new Link("css=#content h1");
     Link registrationPageLink = new Link("css=div#content ul li a[href*=Register]");
 
-    @Step("Login with account: Email [{0}], Password [{1}]")
+    @Step("Login with account")
     public void login(String strEmail, String strPwd) {
         usernameTxt.enter(strEmail);
         passwordTxt.enter(strPwd);

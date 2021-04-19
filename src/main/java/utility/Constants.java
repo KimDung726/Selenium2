@@ -28,6 +28,11 @@ public class Constants {
     public static final String MY_TICKET_TAB = "ManageTicket";
     public static final String BOOK_TICKET_TAB = "BookTicket";
 
+    public static final String NHA_TRANG = "Nha Trang";
+    public static final String HUE = "Huế";
+    public static final String SOFT_SEAT = "Soft seat";
+    public static final int NUMBER_1 = 1;
+
     public static final String GENERATE_ALLURE_REPORT = "allure generate --clean";
 
 }

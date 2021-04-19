@@ -14,7 +14,7 @@ public class RegisterPage extends BasePage {
     Link registerTitleLabel = new Link("css=#content h1");
     Button registerBtn = new Button("css=input[value='Register'][type='submit']");
 
-    @Step("Register account with data: Email [{0}], Password [{1}], ConfirmPassword [{2}], PID [{3}]")
+    @Step("Register account")
     public void registerAccount(String strEmail, String strPassword, String strConfirmPassword, String strPID) {
         emailTxt.enter(strEmail);
         passwordTxt.enter(strPassword);

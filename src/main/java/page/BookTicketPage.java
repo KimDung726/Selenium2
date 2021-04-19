@@ -22,6 +22,7 @@ public class BookTicketPage extends BasePage {
     Link seatTypeInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[3]");
     Link departDateInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[4]");
     Link amountInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[7]");
+    Link infoAfterBookTicket = new Link("css=.MyTable .TableSmallHeader + tr");
     Button btnBookTicket = new Button("css=input[value='Book ticket'][type='submit']");
 
     @Step("Click on the BookTicket tab")
@@ -29,21 +30,21 @@ public class BookTicketPage extends BasePage {
         selectOnTab(Constants.BOOK_TICKET_TAB);
     }
 
-    @Step("Book Ticket: date [{0}]")
-    public void bookTicket(String date) {
+    @Step("Book Ticket")
+    public void bookTicket(String date, String departFrom, String arriveAt, String seatType, int ticketAmount) {
         clickOnDate(date);
+        cbbDepartFrom.select(departFrom);
+        cbbArriveAt.select(arriveAt);
+        cbbSeatType.select(seatType);
+        cbbTicketAmount.select(Integer.toString(ticketAmount));
+    }
+
+    @Step("Click on Book Ticket button")
+    public void clickOnBookTicketBtn() {
         btnBookTicket.click();
     }
 
-    @Step("Book Ticket Several Times: date [{1}], times [{0}]")
-    public void bookTicketSeveralTimes(int time, String date) {
-        for (int i = 0; i <= time; i++) {
-            selectOnTab(Constants.BOOK_TICKET_TAB);
-            bookTicket(date);
-        }
-    }
-
-    @Step("Select date: {0}")
+    @Step("Select date")
     public void clickOnDate(String date) {
         cbbDepartDate.scrollToElement();
         cbbDepartDate.select(date);
@@ -55,21 +56,16 @@ public class BookTicketPage extends BasePage {
     }
 
     @Step("VP: Get information of ticket before book")
-    public List<String> getTicketInfoBeforeBook(String date) {
+    public List<String> getTicketInfoBeforeBook() {
         List<String> bookingInfo = new ArrayList<String>();
 
         bookingInfo.add(cbbDepartFrom.getFirstSelectedOption());
         bookingInfo.add(cbbArriveAt.getFirstSelectedOption());
         bookingInfo.add(cbbSeatType.getFirstSelectedOption());
         bookingInfo.add(cbbTicketAmount.getFirstSelectedOption());
-        bookingInfo.add(date);
+        bookingInfo.add(cbbDepartDate.getFirstSelectedOption());
 
         return bookingInfo;
-    }
-
-    @Step("Get amount of ticket after book")
-    public int getAmountTickets(){
-        return Integer.parseInt(amountInfoAfterBook.getText());
     }
 
     @Step("VP: Get information of ticket after book")
@@ -83,5 +79,10 @@ public class BookTicketPage extends BasePage {
         bookingInfo.add(departDateInfoAfterBook.getText());
 
         return bookingInfo;
+    }
+
+    @Step("VP: Get information of ticket in table after book.")
+    public String getInfoAfterBookTicket() {
+        return infoAfterBookTicket.getText();
     }
 }

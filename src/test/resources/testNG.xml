@@ -14,6 +14,7 @@
             <class name="testcase.Register.RW_REGISTER_TC002"/>
             <class name="testcase.BookTicket.RW_BOOKTICKET_TC001"/>
             <class name="testcase.MyTicket.RW_MYTICKET_TC001"/>
+            <class name="testcase.MyTicket.RW_MYTICKET_TC002"/>
         </classes>
     </test>
 </suite>

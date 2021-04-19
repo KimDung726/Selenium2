@@ -35,7 +35,7 @@ public class RW_LOGIN_TC002 extends BaseTest {
         loginPage.clickOnRegistrationPageLink();
 
         String actualRegisterTitle = registerPage.getRegisterPageTitle();
-        String expectedRegisterTitle = Constants.TITLE_REGISTER_PAGE;
+        String expectedRegisterTitle = Constants.TITLE_LOGIN_PAGE;
 
         info("VP: Verify Register page is displayed");
         Assert.assertEquals(actualRegisterTitle, expectedRegisterTitle);

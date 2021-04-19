@@ -41,12 +41,15 @@ public class RW_BOOKTICKET_TC001 extends BaseTest {
         info("Step #3: Go to Book Ticket page");
         bookTicketPage.selectOnBookTicketTab();
 
-        info("Get information of ticket before book.");
+        info("Step #4:  Book 1 ticket");
         String bookingDate = getDate(Constants.NUMBER_OF_DAYS_FROM_THE_CURRENT);
-        List<String> ticketInfoBeforeBook = bookTicketPage.getTicketInfoBeforeBook(bookingDate);
+        bookTicketPage.bookTicket(bookingDate, Constants.NHA_TRANG, Constants.HUE, Constants.SOFT_SEAT, Constants.NUMBER_1);
 
-        info("Step #4:  Book 1 ticket successfully");
-        bookTicketPage.bookTicket(bookingDate);
+        info("Get information of ticket before book.");
+        List<String> ticketInfoBeforeBook = bookTicketPage.getTicketInfoBeforeBook();
+
+        info("Click on Book Ticket button");
+        bookTicketPage.clickOnBookTicketBtn();
 
         info("Get information of ticket after book.");
         List<String> ticketInfoAfterBook = bookTicketPage.getTicketInfoAfterBookSuccessfully();
