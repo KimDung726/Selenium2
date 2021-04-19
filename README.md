@@ -35,7 +35,12 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#setupenvironment">Set up environment</a></li>
+        <li>
+            <a href="#set-up-environment">Set up environment</a>
+            <ul><a href="#install-java-8-or-above">Install Java 8 or above</a></ul>
+            <ul><a href="#install-maven">Install Maven</a></ul>
+            <ul><a href="#install-dependencies">Install dependencies</a></ul>
+        </li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -49,7 +54,7 @@
 
 [![Website need testing][product-screenshot]](http://www.railway.somee.com/Page/HomePage.cshtml)
 
-A Maven framework in which to build Selenium tests written in Java with Allure reports of test results.
+🌏 A Maven framework in which to build Selenium tests written in Java with Allure reports of test results.
 
 ### Built With
 
@@ -64,7 +69,7 @@ A Maven framework in which to build Selenium tests written in Java with Allure r
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally. To get a local copy up and
+📖 This is an example of how you may give instructions on setting up your project locally. To get a local copy up and
 running follow these simple example steps.
 
 ### Prerequisites
@@ -73,11 +78,12 @@ running follow these simple example steps.
 * [Browsers](https://www.jetbrains.com/idea/download/#section=windows) : Chrome latest or older, Firefox 46.0.1 or older
 
 ### Set up environment
-1. Install Java
-2. Install Maven
-3. Install dependencies
 
-#### 1. Install Java
+🔵 Install Java 8 or above
+🔵 Install Maven
+🔵 Install dependencies
+
+#### 1. Install Java 8 or above
 
 #### 2. Install Maven
 
@@ -103,7 +109,11 @@ running follow these simple example steps.
 
 <!-- ISSUES -->
 
-## Issues
+## Helpful Docs
+
+📑 [Xpath Cheatsheet](https://devhints.io/xpath)
+📑 [Selenium: Locating Elements](https://selenium-python.readthedocs.io/locating-elements.html)
+📑 [Selenium: Waits](https://selenium-python.readthedocs.io/waits.html)
 
 [contributors-shield]: https://img.shields.io/github/contributors/KimDung726/Selenium2.svg?style=for-the-badge
 
