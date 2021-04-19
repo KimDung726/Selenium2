@@ -20,18 +20,18 @@ public class RW_LOGIN_TC001 extends BaseTest {
 
     LoginPage loginPage = new LoginPage();
 
-    @Test(priority = 1, description = "Verify that user can open the Login page")
-    @Story("Login Page check")
+    @Test(priority = 2, description = "Verify that user can open the Login page")
+    @Story("Test verify Login page title")
     public void TC001() {
         startTestCase("RAILWAY_LOGIN_TC001");
 
-        info("Step #1 + #2: Navigate to Railway Page and Click on the Login tab");
+        info("Step #1: Click on the Login tab");
         loginPage.selectOnLoginTab();
 
-        String actualLoginTitle = loginPage.getLoginTitlePage();
-        String expectedLoginTitle = Constants.TITLE_LOGIN_PAGE;
+        String actualLoginTitle = loginPage.getLoginPageTitle();
+        String expectedLoginTitle = Constants.TITLE_REGISTER_PAGE;
 
-        info("Step #3: Observe the destination page");
+        info("VP: Verify Login page is displayed");
         Assert.assertEquals(actualLoginTitle, expectedLoginTitle);
     }
 }

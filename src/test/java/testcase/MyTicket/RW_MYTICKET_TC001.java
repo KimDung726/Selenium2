@@ -27,12 +27,14 @@ public class RW_MYTICKET_TC001 extends BaseTest {
     BookTicketPage bookTicketPage = new BookTicketPage();
 
     @Test(priority = 1, description = "Verify that total tickets in the table must match with the message in the Note")
-    @Story("Compare the total new tickets with the message in the Note ")
+    @Story("Test verify total tickets match with the message in the Note")
     public void TC001() {
         startTestCase("RAILWAY_MYTICKET_TC001");
 
-        info("Step #2: Login into the system");
+        info("Step #1: Go to Login page");
         loginPage.selectOnLoginTab();
+
+        info("Step #2: Log in with valid account");
         loginPage.login(Constants.VALID_EMAIL, Constants.VALID_PASSWORD);
 
         info("Step #3: Book 1 ticket");

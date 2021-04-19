@@ -11,17 +11,18 @@ import java.util.List;
 
 public class BookTicketPage extends BasePage {
 
-    ComboBox _cbbDepartDate = new ComboBox("css=li>select[name='Date']");
-    ComboBox _cbbDepartFrom = new ComboBox("css=select[name='DepartStation']");
-    ComboBox _cbbArriveAt = new ComboBox("css=select[name='ArriveStation']");
-    ComboBox _cbbSeatType = new ComboBox("css=select[name='SeatType']");
-    ComboBox _cbbTicketAmount = new ComboBox("css=select[name='TicketAmount']");
+    ComboBox cbbDepartDate = new ComboBox("css=li>select[name='Date']");
+    ComboBox cbbDepartFrom = new ComboBox("css=select[name='DepartStation']");
+    ComboBox cbbArriveAt = new ComboBox("css=select[name='ArriveStation']");
+    ComboBox cbbSeatType = new ComboBox("css=select[name='SeatType']");
+    ComboBox cbbTicketAmount = new ComboBox("css=select[name='TicketAmount']");
+    Link lblPid = new Link("css=#content li:last-child strong:last-child");
     Link departStationInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[1]");
     Link arriveStationInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[2]");
     Link seatTypeInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[3]");
     Link departDateInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[4]");
     Link amountInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[7]");
-    Button _btnBookTicket = new Button("css=input[value='Book ticket'][type='submit']");
+    Button btnBookTicket = new Button("css=input[value='Book ticket'][type='submit']");
 
     @Step("Click on the BookTicket tab")
     public void selectOnBookTicketTab() {
@@ -31,7 +32,7 @@ public class BookTicketPage extends BasePage {
     @Step("Book Ticket: date [{0}]")
     public void bookTicket(String date) {
         clickOnDate(date);
-        _btnBookTicket.click();
+        btnBookTicket.click();
     }
 
     @Step("Book Ticket Several Times: date [{1}], times [{0}]")
@@ -44,18 +45,23 @@ public class BookTicketPage extends BasePage {
 
     @Step("Select date: {0}")
     public void clickOnDate(String date) {
-        _cbbDepartDate.scrollToElement();
-        _cbbDepartDate.select(date);
+        cbbDepartDate.scrollToElement();
+        cbbDepartDate.select(date);
     }
 
-    @Step("Get information of ticket before book")
+    @Step("VP: Get PID number")
+    public String getTextPid() {
+        return lblPid.getText();
+    }
+
+    @Step("VP: Get information of ticket before book")
     public List<String> getTicketInfoBeforeBook(String date) {
         List<String> bookingInfo = new ArrayList<String>();
 
-        bookingInfo.add(_cbbDepartFrom.getFirstSelectedOption());
-        bookingInfo.add(_cbbArriveAt.getFirstSelectedOption());
-        bookingInfo.add(_cbbSeatType.getFirstSelectedOption());
-        bookingInfo.add(_cbbTicketAmount.getFirstSelectedOption());
+        bookingInfo.add(cbbDepartFrom.getFirstSelectedOption());
+        bookingInfo.add(cbbArriveAt.getFirstSelectedOption());
+        bookingInfo.add(cbbSeatType.getFirstSelectedOption());
+        bookingInfo.add(cbbTicketAmount.getFirstSelectedOption());
         bookingInfo.add(date);
 
         return bookingInfo;
@@ -66,7 +72,7 @@ public class BookTicketPage extends BasePage {
         return Integer.parseInt(amountInfoAfterBook.getText());
     }
 
-    @Step("Get information of ticket after book")
+    @Step("VP: Get information of ticket after book")
     public List<String> getTicketInfoAfterBookSuccessfully() {
         List<String> bookingInfo = new ArrayList<String>();
 

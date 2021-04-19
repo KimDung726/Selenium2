@@ -22,22 +22,22 @@ public class RW_LOGIN_TC002 extends BaseTest {
     LoginPage loginPage = new LoginPage();
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(priority = 1, description = "Verify that clicking on the hyperlink text \"registration page\" will redirect to the Register page")
-    @Story("Clicking on the register hyperlink will redirect to the Register Page")
+    @Test(priority = 3, description = "Verify that clicking on the hyperlink text 'registration page' will redirect to the Register page")
+    @Story("Test verify Register page title")
     public void TC002() {
 
         startTestCase("RAILWAY_LOGIN_TC002");
 
-        info("Step #1 + #2: Navigate to Railway Page and Click on the Login tab");
+        info("Step #1: Click on the Login tab");
         loginPage.selectOnLoginTab();
 
-        info("Step #3: Click on the hyperlink text \"registration page\"");
+        info("Step #2: Click on the hyperlink text 'registration page'");
         loginPage.clickOnRegistrationPageLink();
 
-        String actualRegisterTitle = registerPage.getRegisterTitlePage();
+        String actualRegisterTitle = registerPage.getRegisterPageTitle();
         String expectedRegisterTitle = Constants.TITLE_REGISTER_PAGE;
 
-        info("Step #4: Verify that User is redirected to the Register page");
+        info("VP: Verify Register page is displayed");
         Assert.assertEquals(actualRegisterTitle, expectedRegisterTitle);
     }
 }

@@ -5,6 +5,7 @@ public class Constants {
 
     public static final String VALID_EMAIL = "dudang@squaretrade.com";
     public static final String VALID_PASSWORD = "12345678";
+    public static final String PID_NUMBER = "12345678";
 
     public static final int MAX_PASSWORD_LENGTH = 64;
     public static final int MIN_PASSWORD_LENGTH = 8;

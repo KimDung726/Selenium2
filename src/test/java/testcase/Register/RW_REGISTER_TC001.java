@@ -29,7 +29,7 @@ public class RW_REGISTER_TC001 extends BaseTest {
         info("Step #1 + #2: Navigate to Railway Page and Click on the Register tab");
         registerPage.selectOnRegisterTab();
 
-        String actualRegisterTitle = registerPage.getRegisterTitlePage();
+        String actualRegisterTitle = registerPage.getRegisterPageTitle();
         String expectedRegisterTitle = Constants.TITLE_REGISTER_PAGE;
 
         info("Step #3: Observe the destination page");

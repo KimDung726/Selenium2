@@ -23,7 +23,7 @@ public class LoginPage extends BasePage {
         loginBtn.click();
     }
 
-    @Step("Click on the hyperlink text \"registration page\"")
+    @Step("Click on the hyperlink text 'registration page'")
     public void clickOnRegistrationPageLink() {
         registrationPageLink.waitToBeClickable();
         registrationPageLink.click();
@@ -35,7 +35,7 @@ public class LoginPage extends BasePage {
     }
 
     @Step("VP: Title of Login page displayed")
-    public String getLoginTitlePage() {
+    public String getLoginPageTitle() {
         loginTitleLabel.waitForDisplay();
         return loginTitleLabel.getText();
     }
