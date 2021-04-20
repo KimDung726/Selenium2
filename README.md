@@ -7,7 +7,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/KimDung726/Selenium2">
-    <img src="src/main/java/utility/image/logo.png" alt="Logo" width="120" height="120">
+    <img src="doc/image/logo.png" alt="Logo" width="120" height="120">
   </a>
 
 <h3 align="center">Test Automation Framework</h3>
@@ -24,7 +24,7 @@
 
 <!-- TABLE OF CONTENTS -->
 
-### Table of Contents
+## Table of Contents
 
 1. [About The Project](#about-the-project)
     * [Built With](#built-with)
@@ -141,4 +141,4 @@ running follow these simple example steps.
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
-[product-screenshot]: src/main/java/utility/image/screenshot.png
+[product-screenshot]: doc/image/screenshot.png
