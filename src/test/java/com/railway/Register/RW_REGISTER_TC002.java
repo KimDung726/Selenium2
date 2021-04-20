@@ -10,12 +10,11 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.railway.page.RegisterPage;
-import com.railway.TestListener;
+import com.railway.listener.TestListener;
 
 import static com.railway.utility.Log.*;
 import static com.railway.utility.helper.DataHelper.*;
 
-@Listeners({ TestListener.class })
 @Epic("Regression Tests")
 @Feature("Register")
 public class RW_REGISTER_TC002 extends BaseTest {

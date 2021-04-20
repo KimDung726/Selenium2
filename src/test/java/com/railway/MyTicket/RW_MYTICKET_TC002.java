@@ -10,14 +10,13 @@ import org.testng.annotations.Test;
 import com.railway.page.BookTicketPage;
 import com.railway.page.LoginPage;
 import com.railway.page.MyTicketPage;
-import com.railway.TestListener;
+import com.railway.listener.TestListener;
 import com.railway.utility.Constants;
 
 import static com.railway.utility.Log.info;
 import static com.railway.utility.Log.startTestCase;
 import static com.railway.utility.helper.DataHelper.getDate;
 
-@Listeners({TestListener.class})
 @Epic("Regression Tests")
 @Feature("MyTicket")
 public class RW_MYTICKET_TC002 extends BaseTest {

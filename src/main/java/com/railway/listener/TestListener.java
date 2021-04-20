@@ -1,13 +1,16 @@
-package com.railway;
+package com.railway.listener;
 
+import com.railway.driver.DriverFactory;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class TestListener extends BaseTest implements ITestListener {
+public class TestListener implements ITestListener {
+
     private static String getTestMethodName(ITestResult iTestResult) {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
     }
@@ -30,7 +33,7 @@ public class TestListener extends BaseTest implements ITestListener {
 
         //Get driver from BaseTest and assign to local webdriver variable.
         Object testClass = iTestResult.getInstance();
-        WebDriver driver = ((BaseTest) testClass).driverManager.getWebDriver();
+        WebDriver driver = DriverFactory.getDriver();
 
         //Allure ScreenShotRobot and SaveTestLog
         if (driver != null) {
@@ -41,5 +44,25 @@ public class TestListener extends BaseTest implements ITestListener {
         //Save a log on allure.
         saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");
 
+    }
+
+    public void onTestSuccess(ITestResult result) {
+        System.out.println("onTestSuccess");
+    }
+
+    public void onTestSkipped(ITestResult result) {
+        System.out.println("onTestSkipped");
+    }
+
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+        System.out.println("onTestFailedButWithinSuccessPercentage");
+    }
+
+    public void onStart(ITestContext context) {
+        System.out.println("onStart");
+    }
+
+    public void onFinish(ITestContext context) {
+        System.out.println("onFinish");
     }
 }

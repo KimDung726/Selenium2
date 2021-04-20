@@ -5,7 +5,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.testng.annotations.Listeners;
-import com.railway.TestListener;
+import com.railway.listener.TestListener;
 import com.railway.page.LoginPage;
 import org.testng.Assert;
 import com.railway.BaseTest;
@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 
 import static com.railway.utility.Log.*;
 
-@Listeners({ TestListener.class })
 @Epic("Regression Tests")
 @Feature("Login")
 public class RW_LOGIN_TC001 extends BaseTest {

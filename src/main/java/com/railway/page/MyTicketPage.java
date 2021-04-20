@@ -45,10 +45,10 @@ public class MyTicketPage extends BasePage {
     }
 
     @Step("VP: Get information of Newly ticket in table after book.")
-    public String getInfoBookingNewlyTicket(){
+    public String getInfoBookingNewlyTicket() {
         String infoTicket = infoBookingNewlyTicket.getText();
         infoTicket = infoTicket.substring(2, infoTicket.length());
-        infoTicket = infoTicket.replace(" New","");
+        infoTicket = infoTicket.replace(" New", "");
 
         return infoTicket;
     }

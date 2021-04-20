@@ -9,7 +9,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.railway.page.BookTicketPage;
 import com.railway.page.LoginPage;
-import com.railway.TestListener;
+import com.railway.listener.TestListener;
 import com.railway.utility.Constants;
 
 import java.util.List;
@@ -18,7 +18,6 @@ import static com.railway.utility.Log.info;
 import static com.railway.utility.Log.startTestCase;
 import static com.railway.utility.helper.DataHelper.*;
 
-@Listeners({ TestListener.class })
 @Epic("Regression Tests")
 @Feature("BookTicket")
 public class RW_BOOKTICKET_TC001 extends BaseTest {

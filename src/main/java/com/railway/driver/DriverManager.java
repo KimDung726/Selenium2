@@ -7,6 +7,7 @@ import com.railway.utility.Log;
 public abstract class DriverManager {
 
     protected static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
     protected abstract WebDriver createWebDriver();
 
     /***

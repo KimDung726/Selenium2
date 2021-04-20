@@ -22,7 +22,7 @@ public class BaseTest {
         driverManager.navigateToUrl(Constants.BASE_URL);
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void cleanupTest(ITestResult result) {
         printTestResult(result);
         driverManager.quitDriver();

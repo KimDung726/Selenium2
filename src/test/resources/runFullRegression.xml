@@ -2,19 +2,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Full Regression" thread-count="1" parallel="tests">
     <listeners>
-        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
-        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="com.railway.listener.TestListener"/>
     </listeners>
     <test name="ChromeTest">
         <parameter name="browser" value="CHROME"/>
         <classes>
             <class name="com.railway.Login.RW_LOGIN_TC001"/>
-            <class name="com.railway.Login.RW_LOGIN_TC002"/>
-            <class name="com.railway.Register.RW_REGISTER_TC001"/>
-            <class name="com.railway.Register.RW_REGISTER_TC002"/>
-            <class name="com.railway.BookTicket.RW_BOOKTICKET_TC001"/>
-            <class name="com.railway.MyTicket.RW_MYTICKET_TC001"/>
-            <class name="com.railway.MyTicket.RW_MYTICKET_TC002"/>
+<!--            <class name="com.railway.Login.RW_LOGIN_TC002"/>-->
+<!--            <class name="com.railway.Register.RW_REGISTER_TC001"/>-->
+<!--            <class name="com.railway.Register.RW_REGISTER_TC002"/>-->
+<!--            <class name="com.railway.BookTicket.RW_BOOKTICKET_TC001"/>-->
+<!--            <class name="com.railway.MyTicket.RW_MYTICKET_TC001"/>-->
+<!--            <class name="com.railway.MyTicket.RW_MYTICKET_TC002"/>-->
         </classes>
     </test>
 </suite>

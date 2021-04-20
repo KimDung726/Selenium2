@@ -1,7 +1,7 @@
 package com.railway.Register;
 
 import com.railway.BaseTest;
-import com.railway.TestListener;
+import com.railway.listener.TestListener;
 import com.railway.utility.Constants;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -13,7 +13,6 @@ import com.railway.page.RegisterPage;
 
 import static com.railway.utility.Log.*;
 
-@Listeners({ TestListener.class })
 @Epic("Regression Tests")
 @Feature("Register")
 public class RW_REGISTER_TC001 extends BaseTest {
