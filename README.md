@@ -23,33 +23,19 @@
   </p>
 
 <!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li>
-            <a href="#set-up-environment">Set up environment</a>
-            <ul><a href="#install-java-8-or-above">Install Java 8 or above</a></ul>
-            <ul><a href="#install-maven">Install Maven</a></ul>
-            <ul><a href="#install-dependencies">Install dependencies</a></ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#helpful-docs">Helpful Docs</a></li>
-  </ol>
-</details>
 
+### Table of Contents
+
+1. [About The Project](#about-the-project)
+    * [Built With](#built-with)
+2. [Getting Started](#getting-started)
+    * [Prerequisites](#prerequisites)
+    * [Set up environment](#set-up-environment)
+        - [Install Java 8](#install-java-8)
+        - [Install dependencies](#install-dependencies)
+3. [Usage](#usage)
+4. [Contact](#contact)
+5. [Helpful Docs](#helpful-docs)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -59,7 +45,6 @@
 
 🌏 A Maven framework in which to build Selenium tests written in Java with Allure reports of test results.
 
-
 ### Built With
 
 * [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) - Language
@@ -68,7 +53,6 @@
 * [Allure](https://github.com/allure-framework) - Reporting framework
 * [Maven](https://maven.apache.org/) - Dependency management
 * [WebDriverManager](https://github.com/bonigarcia/webdrivermanager) - Local driver binary management
-
 
 <!-- GETTING STARTED -->
 
@@ -86,9 +70,7 @@ running follow these simple example steps.
 
 ### Set up environment
 
-- Install Java 8 or above
-
-- Install Maven
+- Install Java 8
 
 - Install dependencies
 1. CD to the project folder
