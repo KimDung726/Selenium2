@@ -40,13 +40,13 @@ public class DataHelper {
      * @param time : distance from the current date
      * @return : date
      */
-    public static String getDate(int time) {
+    public static String getDate(String time) {
         DateFormat dateFormat = new SimpleDateFormat(Constants.DAY_FORMAT);
         Date currentDate = new Date();
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(currentDate);
-        calendar.add(Calendar.DATE, time);
+        calendar.add(Calendar.DATE, Integer.parseInt(time));
 
         return dateFormat.format(calendar.getTime());
     }

@@ -11,6 +11,8 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.railway.page.RegisterPage;
 
+import java.util.Hashtable;
+
 import static com.railway.utility.Log.*;
 
 @Epic("Regression Tests")
@@ -19,9 +21,11 @@ public class RW_REGISTER_TC001 extends BaseTest {
 
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(priority = 1, description = "Verify that user can open the Register page")
+    @Test(priority = 1,
+            description = "Verify that user can open the Register page",
+            dataProvider = "getDataForTest")
     @Story("Register Page check")
-    public void TC001() {
+    public void REGISTER_TC001(Hashtable<String, String> data) {
 
         startTestCase("RAILWAY_REGISTER_TC001");
 
@@ -29,7 +33,7 @@ public class RW_REGISTER_TC001 extends BaseTest {
         registerPage.selectOnRegisterTab();
 
         String actualRegisterTitle = registerPage.getRegisterPageTitle();
-        String expectedRegisterTitle = Constants.TITLE_REGISTER_PAGE;
+        String expectedRegisterTitle = data.get("Title Register page");
 
         info("Step #3: Observe the destination page");
         Assert.assertEquals(actualRegisterTitle, expectedRegisterTitle);

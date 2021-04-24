@@ -6,8 +6,11 @@ import com.railway.driver.DriverType;
 import com.railway.utility.Constants;
 import com.railway.utility.Log;
 
+import com.railway.utility.helper.JsonHelper;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+
+import java.lang.reflect.Method;
 
 public class BaseTest {
 
@@ -50,6 +53,12 @@ public class BaseTest {
                 Log.error("[BaseTest] Invalid status");
         }
         Log.endTestCase(strTestResult);
+    }
+
+    @DataProvider(name = "getDataForTest")
+    public synchronized Object[][] getDataForTest(Method method) {
+        String testMethodName = method.getName();
+        return (Object[][]) JsonHelper.getDataFile("data.json", testMethodName);
     }
 
 }

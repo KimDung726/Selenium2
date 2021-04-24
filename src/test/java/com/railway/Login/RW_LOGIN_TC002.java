@@ -12,6 +12,8 @@ import com.railway.page.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Hashtable;
+
 import static com.railway.utility.Log.*;
 
 @Epic("Regression Tests")
@@ -21,9 +23,11 @@ public class RW_LOGIN_TC002 extends BaseTest {
     LoginPage loginPage = new LoginPage();
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(priority = 3, description = "Verify that clicking on the hyperlink text 'registration page' will redirect to the Register page")
+    @Test(priority = 3,
+            description = "Verify that clicking on the hyperlink text 'registration page' will redirect to the Register page",
+            dataProvider = "getDataForTest")
     @Story("Test verify Register page title")
-    public void TC002() {
+    public void LOGIN_TC002(Hashtable<String, String> data) {
 
         startTestCase("RAILWAY_LOGIN_TC002");
 
@@ -34,7 +38,7 @@ public class RW_LOGIN_TC002 extends BaseTest {
         loginPage.clickOnRegistrationPageLink();
 
         String actualRegisterTitle = registerPage.getRegisterPageTitle();
-        String expectedRegisterTitle = Constants.TITLE_LOGIN_PAGE;
+        String expectedRegisterTitle = data.get("Title Register page");
 
         info("VP: Verify Register page is displayed");
         Assert.assertEquals(actualRegisterTitle, expectedRegisterTitle);

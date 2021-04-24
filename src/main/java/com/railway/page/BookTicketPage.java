@@ -31,12 +31,12 @@ public class BookTicketPage extends BasePage {
     }
 
     @Step("Book Ticket")
-    public void bookTicket(String date, String departFrom, String arriveAt, String seatType, int ticketAmount) {
+    public void bookTicket(String date, String departFrom, String arriveAt, String seatType, String ticketAmount) {
         clickOnDate(date);
         cbbDepartFrom.select(departFrom);
         cbbArriveAt.select(arriveAt);
         cbbSeatType.select(seatType);
-        cbbTicketAmount.select(Integer.toString(ticketAmount));
+        cbbTicketAmount.select(ticketAmount);
     }
 
     @Step("Click on Book Ticket button")

@@ -12,6 +12,8 @@ import org.testng.annotations.Test;
 import com.railway.page.RegisterPage;
 import com.railway.listener.TestListener;
 
+import java.util.Hashtable;
+
 import static com.railway.utility.Log.*;
 import static com.railway.utility.helper.DataHelper.*;
 
@@ -21,11 +23,13 @@ public class RW_REGISTER_TC002 extends BaseTest {
 
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(priority = 1, description = "Verify that user cannot create new account using Email that has been registered")
+    @Test(priority = 1,
+            description = "Verify that user cannot create new account using Email that has been registered",
+            dataProvider = "getDataForTest")
     @Story("Create new account using Email that has been registered")
-    public void TC001() {
+    public void REGISTER_TC002(Hashtable<String, String> data) {
 
-        startTestCase("RAILWAY_REGISTER_TC001");
+        startTestCase("RAILWAY_REGISTER_TC002");
 
         info("Random data for Username, Password and PID");
         String password = getRandomPassword();
@@ -35,10 +39,10 @@ public class RW_REGISTER_TC002 extends BaseTest {
         registerPage.selectOnRegisterTab();
 
         info("Step #3: Input a registered email in the Email field and Input valid data for all other field");
-        registerPage.registerAccount(Constants.VALID_EMAIL, password, password, PID);
+        registerPage.registerAccount(data.get("username"), password, password, PID);
 
         String actualRegisterErrorMsg = registerPage.getRegisterErrorLabel();
-        String expectedRegisterErrorMsg = Messages.EMAIL_HAS_BEEN_REGISTERED;
+        String expectedRegisterErrorMsg = data.get("message");
 
         info("Step #4: Verify that User cannot register new account");
         Assert.assertEquals(actualRegisterErrorMsg, expectedRegisterErrorMsg);

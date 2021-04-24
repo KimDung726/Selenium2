@@ -13,6 +13,8 @@ import com.railway.page.MyTicketPage;
 import com.railway.listener.TestListener;
 import com.railway.utility.Constants;
 
+import java.util.Hashtable;
+
 import static com.railway.utility.Log.info;
 import static com.railway.utility.Log.startTestCase;
 import static com.railway.utility.helper.DataHelper.getDate;
@@ -25,21 +27,23 @@ public class RW_MYTICKET_TC002 extends BaseTest {
     MyTicketPage myTicketPage = new MyTicketPage();
     BookTicketPage bookTicketPage = new BookTicketPage();
 
-    @Test(priority = 1, description = "Verify that booking newly ticket does not make old booked ticket disappear")
+    @Test(priority = 1,
+            description = "Verify that booking newly ticket does not make old booked ticket disappear",
+            dataProvider = "getDataForTest")
     @Story("Test verify booking newly ticket does not make old booked ticket disappear")
-    public void TC002() {
+    public void MYTICKET_TC002(Hashtable<String, String> data) {
         startTestCase("RAILWAY_MYTICKET_TC002");
 
         info("Step #1: Go to Login page");
         loginPage.selectOnLoginTab();
 
         info("Step #2: Log in with valid account");
-        loginPage.login(Constants.VALID_EMAIL, Constants.VALID_PASSWORD);
+        loginPage.login(data.get("username"), data.get("password"));
 
         info("Step #3: Book 1 ticket");
         bookTicketPage.selectOnBookTicketTab();
-        String bookingDate = getDate(Constants.NUMBER_OF_DAYS_FROM_THE_CURRENT);
-        bookTicketPage.bookTicket(bookingDate, Constants.NHA_TRANG, Constants.HUE, Constants.SOFT_SEAT, Constants.NUMBER_1);
+        String bookingDate = getDate(data.get("Number of days from the current"));
+        bookTicketPage.bookTicket(bookingDate, data.get("Depart from"), data.get("Arrive at"), data.get("Seat type"), data.get("Ticket amount"));
         bookTicketPage.clickOnBookTicketBtn();
 
         info("Get information of ticket in table after book.");

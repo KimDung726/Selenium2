@@ -1,0 +1,59 @@
+{
+  "BOOKTICKET_TC001": [
+    {
+      "username": "dudang@squaretrade.com",
+      "password": "12345678",
+      "pid": "12345678",
+      "Number of days from the current": "5",
+      "Depart from": "Nha Trang",
+      "Arrive at": "Huế",
+      "Seat type": "Soft seat",
+      "Ticket amount": "1"
+    }
+  ],
+  "LOGIN_TC002": [
+    {
+      "Title Register page": "Create account"
+    }
+  ],
+  "LOGIN_TC001": [
+    {
+      "Title Login page": "Login page"
+    }
+  ],
+  "MYTICKET_TC001": [
+    {
+      "username": "dudang@squaretrade.com",
+      "password": "12345678",
+      "Number of days from the current": "3",
+      "Depart from": "Đà Nẵng",
+      "Arrive at": "Sài Gòn",
+      "Seat type": "Hard bed",
+      "Ticket amount": "1"
+    }
+    
+  ],
+  "MYTICKET_TC002": [
+    {
+      "username": "dudang@squaretrade.com",
+      "password": "12345678",
+      "Number of days from the current": "5",
+      "Depart from": "Nha Trang",
+      "Arrive at": "Huế",
+      "Seat type": "Soft seat",
+      "Ticket amount": "1"
+    }
+  ],
+  "REGISTER_TC001": [
+    {
+      "Title Register page": "Create account"
+    }
+  ],
+  "REGISTER_TC002": [
+    {
+      "username": "dudang@squaretrade.com",
+      "Title Register page": "Create account",
+      "message": "This email address is already in use."
+    }
+  ]
+}

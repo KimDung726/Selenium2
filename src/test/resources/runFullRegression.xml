@@ -7,12 +7,12 @@
     <test name="ChromeTest">
         <parameter name="browser" value="CHROME"/>
         <classes>
-            <class name="com.railway.Login.RW_LOGIN_TC001"/>
+<!--            <class name="com.railway.Login.RW_LOGIN_TC001"/>-->
 <!--            <class name="com.railway.Login.RW_LOGIN_TC002"/>-->
 <!--            <class name="com.railway.Register.RW_REGISTER_TC001"/>-->
 <!--            <class name="com.railway.Register.RW_REGISTER_TC002"/>-->
 <!--            <class name="com.railway.BookTicket.RW_BOOKTICKET_TC001"/>-->
-<!--            <class name="com.railway.MyTicket.RW_MYTICKET_TC001"/>-->
+            <class name="com.railway.MyTicket.RW_MYTICKET_TC001"/>
 <!--            <class name="com.railway.MyTicket.RW_MYTICKET_TC002"/>-->
         </classes>
     </test>
