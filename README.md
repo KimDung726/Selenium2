@@ -74,7 +74,7 @@ running follow these simple example steps.
 
 - Install dependencies
 1. CD to the project folder
-2. Open CMD/terminal then type `./mvnw install`
+2. Open CMD/terminal then type `mvnw install`
 
 
 <!-- USAGE -->
