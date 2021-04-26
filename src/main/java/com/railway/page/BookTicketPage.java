@@ -3,6 +3,7 @@ package com.railway.page;
 import com.railway.control.Button;
 import com.railway.control.ComboBox;
 import com.railway.control.Link;
+import com.railway.control.Table;
 import com.railway.utility.Constants;
 import io.qameta.allure.Step;
 
@@ -17,12 +18,7 @@ public class BookTicketPage extends BasePage {
     ComboBox cbbSeatType = new ComboBox("css=select[name='SeatType']");
     ComboBox cbbTicketAmount = new ComboBox("css=select[name='TicketAmount']");
     Link lblPid = new Link("css=#content li:last-child strong:last-child");
-    Link departStationInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[1]");
-    Link arriveStationInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[2]");
-    Link seatTypeInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[3]");
-    Link departDateInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[4]");
-    Link amountInfoAfterBook = new Link("//table[@class='MyTable WideTable']//tr[@class='OddRow']/td[7]");
-    Link infoAfterBookTicket = new Link("css=.MyTable .TableSmallHeader + tr");
+    Table tableAfterBookTicket = new Table("css=.MyTable.WideTable");
     Button btnBookTicket = new Button("css=input[value='Book ticket'][type='submit']");
 
     @Step("Click on the BookTicket tab")
@@ -41,6 +37,7 @@ public class BookTicketPage extends BasePage {
 
     @Step("Click on Book Ticket button")
     public void clickOnBookTicketBtn() {
+        btnBookTicket.scrollToElement();
         btnBookTicket.click();
     }
 
@@ -57,32 +54,45 @@ public class BookTicketPage extends BasePage {
 
     @Step("VP: Get information of ticket before book")
     public List<String> getTicketInfoBeforeBook() {
-        List<String> bookingInfo = new ArrayList<String>();
 
+        List<String> bookingInfo = new ArrayList<String>();
         bookingInfo.add(cbbDepartFrom.getFirstSelectedOption());
         bookingInfo.add(cbbArriveAt.getFirstSelectedOption());
         bookingInfo.add(cbbSeatType.getFirstSelectedOption());
-        bookingInfo.add(cbbTicketAmount.getFirstSelectedOption());
         bookingInfo.add(cbbDepartDate.getFirstSelectedOption());
+        bookingInfo.add(cbbTicketAmount.getFirstSelectedOption());
 
         return bookingInfo;
     }
 
-    @Step("VP: Get information of ticket after book")
-    public List<String> getTicketInfoAfterBookSuccessfully() {
-        List<String> bookingInfo = new ArrayList<String>();
+    @Step("VP: Get information of ticket after book (any options)")
+    public ArrayList<String> getTicketInfoAfterBookSuccessfully() {
 
-        bookingInfo.add(departStationInfoAfterBook.getText());
-        bookingInfo.add(arriveStationInfoAfterBook.getText());
-        bookingInfo.add(seatTypeInfoAfterBook.getText());
-        bookingInfo.add(amountInfoAfterBook.getText());
-        bookingInfo.add(departDateInfoAfterBook.getText());
+        ArrayList<Integer> options = new ArrayList<Integer>();
+        options.add(Constants.POSITION_OF_DEPART_FROM_IN_BOOKTICKET);
+        options.add(Constants.POSITION_OF_ARRIVE_AT_IN_BOOKTICKET);
+        options.add(Constants.POSITION_OF_SEAT_TYPE_IN_BOOKTICKET);
+        options.add(Constants.POSITION_OF_DEPART_DATE_IN_BOOKTICKET);
+        options.add(Constants.POSITION_OF_AMOUNT_IN_BOOKTICKET);
 
-        return bookingInfo;
+        return tableAfterBookTicket.getValueColumnInRowById(2, options);
     }
 
-    @Step("VP: Get information of ticket in table after book.")
-    public String getInfoAfterBookTicket() {
-        return infoAfterBookTicket.getText();
+    @Step("VP: Get information of ticket after book (full options)")
+    public ArrayList<String> getInfoAfterBookTicket() {
+
+        ArrayList<Integer> options = new ArrayList<Integer>();
+        options.add(Constants.POSITION_OF_BOOK_DATE_IN_BOOKTICKET);
+        options.add(Constants.POSITION_OF_EXPIRED_DATE_BOOKTICKET);
+        options.add(Constants.POSITION_OF_TOTAL_PRICE_IN_BOOKTICKET);
+        ArrayList<String> infoAdd = tableAfterBookTicket.getValueColumnInRowById(2, options);
+
+        ArrayList<String> ticket = getTicketInfoAfterBookSuccessfully();
+        for (String info : infoAdd) {
+            ticket.add(info);
+        }
+
+        return ticket;
     }
+
 }

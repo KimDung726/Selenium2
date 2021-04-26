@@ -1,13 +1,10 @@
 package com.railway.Register;
 
 import com.railway.BaseTest;
-import com.railway.listener.TestListener;
-import com.railway.utility.Constants;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.railway.page.RegisterPage;
 
@@ -38,5 +35,4 @@ public class RW_REGISTER_TC001 extends BaseTest {
         info("Step #3: Observe the destination page");
         Assert.assertEquals(actualRegisterTitle, expectedRegisterTitle);
     }
-
 }

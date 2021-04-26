@@ -5,14 +5,12 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.railway.page.BookTicketPage;
 import com.railway.page.LoginPage;
 import com.railway.page.MyTicketPage;
-import com.railway.listener.TestListener;
-import com.railway.utility.Constants;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 import static com.railway.utility.Log.info;
@@ -47,13 +45,13 @@ public class RW_MYTICKET_TC002 extends BaseTest {
         bookTicketPage.clickOnBookTicketBtn();
 
         info("Get information of ticket in table after book.");
-        String infoAfterBookTicket = bookTicketPage.getInfoAfterBookTicket();
+        ArrayList<String> infoAfterBookTicket = bookTicketPage.getInfoAfterBookTicket();
 
         info("Step #4: Open the My Ticket page");
         myTicketPage.selectOnMyTicketTab();
 
         info("Get information of Newly ticket in table after book.");
-        String infoBookingNewlyTicket = myTicketPage.getInfoBookingNewlyTicket();
+        ArrayList<String> infoBookingNewlyTicket = myTicketPage.getInfoBookingNewlyTicket();
 
         info("VP: The ticket table must display all booked and expired tickets");
         Assert.assertEquals(infoAfterBookTicket, infoBookingNewlyTicket);

@@ -1,16 +1,12 @@
 package com.railway.Register;
 
 import com.railway.BaseTest;
-import com.railway.utility.Constants;
-import com.railway.utility.Messages;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.railway.page.RegisterPage;
-import com.railway.listener.TestListener;
 
 import java.util.Hashtable;
 
@@ -47,5 +43,4 @@ public class RW_REGISTER_TC002 extends BaseTest {
         info("Step #4: Verify that User cannot register new account");
         Assert.assertEquals(actualRegisterErrorMsg, expectedRegisterErrorMsg);
     }
-
 }

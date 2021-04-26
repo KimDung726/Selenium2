@@ -27,16 +27,17 @@ public class TestListener implements ITestListener {
 
     //Text attachment for allure
     @Attachment(value = "{0}", type = "text/plain")
-    public static String saveTextLog (String message) {
+    public static String saveTextLog(String message) {
         return message;
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println("I am in onTestFailure method " +  getTestMethodName(iTestResult) + " failed");
+        System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
         WebDriver driver = DriverFactory.getDriver();
 
-        Allure.addAttachment(UUID.randomUUID().toString(), new ByteArrayInputStream(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES)));
+        Allure.addAttachment(getTestMethodName(iTestResult)
+                , new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 
     public void onTestSuccess(ITestResult result) {

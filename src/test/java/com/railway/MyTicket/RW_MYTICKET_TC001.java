@@ -11,7 +11,6 @@ import com.railway.page.BookTicketPage;
 import com.railway.page.LoginPage;
 import com.railway.page.MyTicketPage;
 import com.railway.listener.TestListener;
-import com.railway.utility.Constants;
 
 import java.util.Hashtable;
 
@@ -19,9 +18,14 @@ import static com.railway.utility.Log.info;
 import static com.railway.utility.Log.startTestCase;
 import static com.railway.utility.helper.DataHelper.getDate;
 
+@Listeners({TestListener.class})
 @Epic("Regression Tests")
 @Feature("MyTicket")
 public class RW_MYTICKET_TC001 extends BaseTest {
+
+    LoginPage loginPage = new LoginPage();
+    MyTicketPage myTicketPage = new MyTicketPage();
+    BookTicketPage bookTicketPage = new BookTicketPage();
 
     @Test(priority = 1,
             description = "Verify that total tickets in the table must match with the message in the Note",
@@ -53,11 +57,6 @@ public class RW_MYTICKET_TC001 extends BaseTest {
         info("VP: The total tickets match the message");
         Assert.assertEquals(actualTotalTicketInTable, expectedTotalNewTicketInNote);
     }
-
-    LoginPage loginPage = new LoginPage();
-    MyTicketPage myTicketPage = new MyTicketPage();
-    BookTicketPage bookTicketPage = new BookTicketPage();
-
 }
 
 

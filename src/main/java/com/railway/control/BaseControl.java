@@ -95,10 +95,6 @@ public class BaseControl {
         }
     }
 
-    public List<WebElement> totalElements() {
-        return getDriver().findElements(getLocator());
-    }
-
     public WebElement getElement() {
         WebElement element = null;
         try {
