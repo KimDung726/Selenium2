@@ -1,4 +1,12 @@
 {
+  "PRODUCT_TC001": [
+    {
+      "keyword": "điện thoại",
+      "Search summary Title": "Kết quả tìm kiếm cho `điện thoại`:",
+      "Position of Item": "2",
+      "Breadcrumb": ""
+    }
+  ],
   "BOOKTICKET_TC001": [
     {
       "username": "dudang@squaretrade.com",
@@ -31,7 +39,6 @@
       "Seat type": "Hard bed",
       "Ticket amount": "1"
     }
-    
   ],
   "MYTICKET_TC002": [
     {
