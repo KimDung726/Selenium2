@@ -1,7 +1,6 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+[![author][author-shield]][author-url]
+[![selenium2][selenium2-shield]][selenium2-url]
+[![ratting][ratting-shield]][ratting-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -70,12 +69,15 @@ running follow these simple example steps.
 
 ### Set up environment
 
-- Install Java 8
+1. Install Java 8
 
-- Install dependencies
-1. CD to the project folder
-2. Open CMD/terminal then type `mvnw install`
+2. Install dependencies
+- CD to the project folder
+- Open CMD/terminal then type :
 
+   ```bash
+   mvnw install
+   ```
 
 <!-- USAGE -->
 
@@ -83,31 +85,45 @@ running follow these simple example steps.
 
 🖥 Copy the repo into your local machine : 
 
-   ```sh
+   ```bash
    git clone https://github.com/KimDung726/Selenium2
    ```
 
-1. Type to run test
+### Run the test
 
-   ```sh
+1. Run test script on IntelliJ
+
+- Under Railway project, go to 'src/test/resources'
+- Select the test suite file (runFullRegression.xml for example), right click on this file, select Run.
+
+2. Run test script via Maven
+
+- CD to the project folder
+- Open CMD/terminal then type :
+
+   ```bash
    mvnw clean test
    ```
-   
-2. Generate report
+  📍 It will run the default file: `runFullRegression.xml`. 
+  
+  📍 If you want to run another file, add the param: `-DxmlFile=NameFile.xml`
+  
+### Generate report
 
-   ```sh
+- CD to the project folder
+- Open CMD/terminal then type :
+
+   ```bash
    allure serve allure-results
    ```
    
-📊 The test result locates in the test-output folder
-
+📊 The test result locates in the allure-results folder
 
 <!-- CONTACT -->
 
 ## Contact
 
 📱 Created by [Dang Thi Kim Dung](kimdung726@gmail.com) - feel free to contact me!
-
 
 <!-- HELPFUL DOCS -->
 
@@ -119,26 +135,16 @@ running follow these simple example steps.
 
 📑 [Selenium: Waits](https://selenium-python.readthedocs.io/waits.html)
 
-[contributors-shield]: https://img.shields.io/github/contributors/KimDung726/Selenium2.svg?style=for-the-badge
+[author-shield]: https://img.shields.io/badge/Author-Dung-blue
 
-[contributors-url]: https://github.com/KimDung726/Selenium2/graphs/contributors
+[author-url]: https://github.com/KimDung726
 
-[forks-shield]: https://img.shields.io/github/forks/KimDung726/Selenium2.svg?style=for-the-badge
+[ratting-shield]: https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter?color=orange
 
-[forks-url]: https://github.com/KimDung726/Selenium2/graphs/network/members
+[ratting-url]: https://github.com/KimDung726
 
-[stars-shield]: https://img.shields.io/github/stars/KimDung726/Selenium2.svg?style=for-the-badge
+[selenium2-shield]: https://img.shields.io/badge/Selenium2-PASS-brightgreen
 
-[stars-url]: https://github.com/KimDung726/Selenium2/graphs/stargazers
-
-[issues-shield]: https://img.shields.io/github/issues/KimDung726/Selenium2.svg?style=for-the-badge
-
-[issues-url]: https://github.com/KimDung726/Selenium2/graphs/issues
-
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-
-[license-url]:https://github.com/KimDung726/Selenium2/graphs/blob/master/LICENSE.txt
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[selenium2-url]: https://github.com/KimDung726/Selenium2/graphs/stargazers
 
 [product-screenshot]: doc/image/screenshot.png
