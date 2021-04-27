@@ -44,6 +44,15 @@
 
 🌏 A Maven framework in which to build Selenium tests written in Java with Allure reports of test results.
 
+📸 Take Screenshots: 
+On test failures screenshots will automatically be taken. The screenshot files will be named with a combination of the class name and the test method name.
+
+📟 Parallel Test Execution: 
+The Project is preconfigured to run the tests in parallel. The number of test that will be executed at the same time is configurable (defaults to 4) or can be deactivated if required.
+
+📊 Allure Test Result Report
+Allure provides a good representation of test execution output and is designed to create reports that are clear to everyone by creating graphs regarding test execution time, overall test result overviews, test result history, etc.
+
 ### Built With
 
 * [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) - Language
@@ -116,8 +125,8 @@ running follow these simple example steps.
    ```bash
    allure serve allure-results
    ```
-   
-📊 The test result locates in the allure-results folder
+
+🗂 The test result locates in the allure-results folder
 
 <!-- CONTACT -->
 
