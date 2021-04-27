@@ -8,7 +8,7 @@
         <parameter name="browser" value="CHROME"/>
         <classes>
             <class name="com.tikivn.ProductTest.TIKI_PRODUCT_TC001"/>
-<!--            <class name="com.tikivn.Login.RW_LOGIN_TC002"/>-->
+            <class name="com.tikivn.ProductTest.TIKI_PRODUCT_TC002"/>
         </classes>
     </test>
 </suite>
